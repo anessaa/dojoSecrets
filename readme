@@ -1,0 +1,21 @@
+registration
+login
+dashboard - post a secret, like a secret, delete a secret, how many liked secrets, 5 most recent secrets,  link to all secrets
+secrets - list all secrets, back link to dashboard, created_at
+
+routes:
+index
+dashboard
+all secrets
+
+register or validate
+login
+create secret
+
+like
+delete
+
+Models:
+Secret.like
+secret.delete
+secret.create

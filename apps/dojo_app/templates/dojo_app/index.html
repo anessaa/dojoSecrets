@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Secrets</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'dojo_app/css/style.css' %}" />
+
+  </head>
+  <body>
+  <h1>Registration</h1>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  <form class="spacing" action="/validate/" method="POST">
+    {%csrf_token%}
+    <label>First Name: </label><input type="text" name="first_name"><br />
+    <label>Last Name: </label><input type="text" name="last_name"><br />
+    <label>Email: </label><input type="text" name="email"><br />
+    <label>Password: </label><input type="text" name="password"><br />
+    <label>Confirm pw: </label><input type="text" name="confirm_pw"><br />
+    <input type="submit" value="Register" />
+  </form>
+  <br />
+  <h1>Login</h1>
+    <form class="spacing" action="/login/" method="POST">
+      {%csrf_token%}
+      <label>Email: </label><input type="text" name="login_email"><br />
+      <label>Password: </label><input type="text" name="login_password"><br>
+      <input type="submit" value="Login">
+    </form>
+
+  </body>
+</html>
